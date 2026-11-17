@@ -1,0 +1,47 @@
+[
+  "constructor(string _nombre, uint256 _objetivoWei, uint256 _duracionMinutos)",
+
+  "function organizador() view returns (address)",
+  "function objetivo() view returns (uint256)",
+  "function fechaLimite() view returns (uint256)",
+  "function nombreTorneo() view returns (string)",
+  "function totalRecaudado() view returns (uint256)",
+  "function fondosRetirados() view returns (bool)",
+  "function aportaciones(address) view returns (uint256)",
+
+  "function aportar() payable",
+  "function retirarFondos()",
+  "function solicitarDevolucion()",
+  "function subirDocumento(uint8 tipo, string cid, string nombre) returns (uint256 id)",
+
+  "function estado() view returns (uint8)",
+  "function documentacionPublicada() view returns (bool)",
+  "function numDocumentos() view returns (uint256)",
+  "function getDocumento(uint256 id) view returns (tuple(uint256 id, uint8 tipo, string cid, string nombre, address autor, uint256 fecha))",
+  "function getDocumentos() view returns (tuple(uint256 id, uint8 tipo, string cid, string nombre, address autor, uint256 fecha)[])",
+  "function getDocumentosDe(address autor) view returns (uint256[])",
+  "function ultimoDocumento(uint8 tipo) view returns (tuple(uint256 id, uint8 tipo, string cid, string nombre, address autor, uint256 fecha))",
+  "function getContractBalance() view returns (uint256)",
+
+  "event Aportacion(address indexed participante, uint256 cantidad)",
+  "event Retirada(address indexed organizador, uint256 cantidad)",
+  "event Devolucion(address indexed participante, uint256 cantidad)",
+  "event DocumentoSubido(uint256 indexed id, uint8 tipo, address indexed autor, string cid)",
+
+  "error ParametrosInvalidos()",
+  "error SoloOrganizador()",
+  "error CampanaCerrada()",
+  "error CampanaAbierta()",
+  "error ImporteNulo()",
+  "error FaltaDocumentacion()",
+  "error DocumentacionBloqueada()",
+  "error MetaNoAlcanzada()",
+  "error MetaAlcanzada()",
+  "error YaRetirado()",
+  "error FondosNoRetirados()",
+  "error SinAportacion()",
+  "error NoAutorizado()",
+  "error CidVacio()",
+  "error DocumentoInexistente()",
+  "error TransferenciaFallida()"
+]
